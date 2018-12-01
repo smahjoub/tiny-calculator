@@ -10,6 +10,12 @@ namespace TinyCalculator
     {
         static void Main(string[] args)
         {
+            var infix = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
+            var tokenizer = new ShuntingYardTokenizer();
+
+            Console.WriteLine(tokenizer.ToPostfix(infix));
+
+            Console.ReadKey();
         }
     }
 }
