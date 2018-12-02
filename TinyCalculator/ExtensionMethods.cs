@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TinyCalculator
 {
+    /// <summary>
+    /// Extension Methods to string class to make more readable code
+    /// </summary>
     public static class ExtensionMethods
     {
         private static readonly List<TokenOperator> tokenOperators;

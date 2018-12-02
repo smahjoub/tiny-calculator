@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace TinyCalculator
 {
+    /// <summary>
+    /// Class that contains the implementation of the Shunting-Yard Algorithm
+    /// </summary>
     public class ShuntingYardTokenizer
     {
+        /// <summary>
+        /// Converts an infix expression to a postfix expression using an implementation of the Shunting-Yard Algorithm
+        /// </summary>
+        /// <param name="infix">Infix expression to pars</param>
+        /// <returns>Postix expression</returns>
         public string ToPostfix(string infix)
         {
             var tokens = infix.Split(' ');
@@ -31,9 +39,7 @@ namespace TinyCalculator
                         {
                             var secondOp = stackTop.GetOperator();
            
-                            if (firstOp.Precedence > secondOp.Precedence ||
-                                (firstOp.AssociativityType == AssociativityType.Left &&
-                                 firstOp.Precedence <= secondOp.Precedence))
+                            if (firstOp.Precedence <= secondOp.Precedence && firstOp.AssociativityType == AssociativityType.Left)
                             {
                                 output.Add(stack.Pop());
                             }

@@ -11,10 +11,24 @@ namespace TinyCalculator
         static void Main(string[] args)
         {
             var infix = "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3";
-            var tokenizer = new ShuntingYardTokenizer();
 
-            Console.WriteLine(tokenizer.ToPostfix(infix));
+            Console.WriteLine("Input Expression: {0}", infix);
 
+            var tokenizer   = new ShuntingYardTokenizer();
+            
+            try
+            {
+                var postFix = tokenizer.ToPostfix(infix);
+                var output = Calculator.Evaluate(postFix);
+                Console.WriteLine("RPN Expression: {0}", postFix);
+                Console.WriteLine("Result : {0}", output);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something wrong happened: {0}", e.Message);
+            }
+           
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }

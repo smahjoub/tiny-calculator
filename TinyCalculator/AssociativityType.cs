@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TinyCalculator
 {
+    /// <summary>
+    /// Associativity Type enum
+    /// </summary>
     public enum AssociativityType
     {
         Left = 0,

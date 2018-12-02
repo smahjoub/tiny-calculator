@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace TinyCalculator
 {
+
+    /// <summary>
+    /// A struct that contains all mathematical operator properties
+    /// </summary>
     public struct TokenOperator
     {
         private readonly AssociativityType associativityType;
